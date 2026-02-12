@@ -87,9 +87,13 @@ def play_game():
         else:  # If the guess is equal to the target number, break out of the loop as the user has guessed correctly
             break
 # Display success message if guessed correctly
-
+    if guess == target_number:  # If the user's guess is correct, congratulate them and display the number of attempts it took
+        print(
+            f"Congratulations! You've guessed the number {target_number} in {attempts} attempts!")
 # If max attempts are used up, reveal the correct number
-
+    else:  # If the user has used up all attempts without guessing correctly, reveal the correct number
+        print(
+            f"Sorry, you've used all {max_attempts} attempts. The correct number was {target_number}.")
 # Main game loop
 
 # Ask for user's name and greet them
