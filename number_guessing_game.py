@@ -80,7 +80,12 @@ def play_game():
         attempts += 1
 
 # Check if guess is too low or too high
-
+        if guess < target_number:  # If the guess is less than the target number, inform the user that their guess is too low
+            print("Too low! Try again.")
+        elif guess > target_number:  # If the guess is greater than the target number, inform the user that their guess is too high
+            print("Too high! Try again.")
+        else:  # If the guess is equal to the target number, break out of the loop as the user has guessed correctly
+            break
 # Display success message if guessed correctly
 
 # If max attempts are used up, reveal the correct number
