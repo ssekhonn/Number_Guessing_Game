@@ -96,8 +96,20 @@ def play_game():
             f"Sorry, you've used all {max_attempts} attempts. The correct number was {target_number}.")
 # Main game loop
 
-# Ask for user's name and greet them
 
+def main():
+    print("Welcome to the Number Guessing Game!")
+# Ask for user's name and greet them
+    name = input("Please enter your name: ")
+    print(f"Hello, {name}! Let's start the game.")
+    while True:  # Loop to allow the user to play multiple rounds
+        play_game()  # Play one round of the game
 # Ask if they want to play again, only accepting 'y' or 'n'
+        play_again = get_yes_no("Do you want to play again? (y/n): ")
+        if play_again == 'n':  # If the user doesn't want to play again, break out of the loop
+            print("Thanks for playing!")
+            break
+
 
 # Run the game
+main()
