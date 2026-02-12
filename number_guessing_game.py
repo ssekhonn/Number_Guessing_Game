@@ -14,10 +14,31 @@ exhausts all attempts. After each round, the user is asked if they want to
 
 '''
 # Import random module to generate a random number
+import random
 
 # Function to get a valid integer input with error handling
 
+
+def get_valid_integer(prompt):
+    while True:  # Loop until a valid integer is entered
+        try:  # Try to convert the input to an integer
+            return int(input(prompt))  # If successful, return the integer
+        except ValueError:  # If a ValueError occurs, it means the input was not a valid integer
+            # Prompt the user to enter a valid integer again
+            print("Please enter a valid integer.")
+
 # Function to get a valid 'y' or 'n' response from the user
+
+
+def get_yes_no(prompt):  # Loop until a valid response is entered
+    while True:
+        # Get the user's response and convert it to lowercase
+        response = input(prompt).lower()
+        if response in ['y', 'n']:  # Check if the response is either 'y' or 'n'
+            return response  # If valid, return the response
+        else:
+            # Prompt the user to enter a valid response again
+            print("Please enter 'y' for yes or 'n' for no.")
 
 # Function to play one round of the game
 
