@@ -42,17 +42,42 @@ def get_yes_no(prompt):  # Loop until a valid response is entered
 
 # Function to play one round of the game
 
-# Ask for number range
 
-# Ensure low_number is less than high_number
+def play_game():
 
+    # Ask for number range
+    while True:  # Loop until a valid number range is entered
+        low_number = get_valid_integer(
+            # Get the lower bound of the number range from the user
+            "Enter the lower bound of the number range: ")
+        high_number = get_valid_integer(
+            # Get the upper bound of the number range from the user
+            "Enter the upper bound of the number range: ")
+        if low_number < high_number:  # Check if the lower bound is less than the upper bound
+            break
+        else:  # If the lower bound is not less than the upper bound, prompt the user to enter a valid range again
+            print("The lower bound must be less than the upper bound.")
 # Ask for number of attempts
+    # Get the number of attempts from the user
+    max_attempts = get_valid_integer("Enter the number of attempts you want: ")
+    while max_attempts <= 0:  # Check if the number of attempts is a positive integer
+        print("Please enter a positive integer for attempts.")
+        max_attempts = get_valid_integer(
+            # If the number of attempts is not a positive integer, prompt the user to enter a valid number of attempts again
+            "Enter the number of attempts you want: ")
 
 # Generate random number
+    target_number = random.randint(low_number, high_number)
 
 # Track number of attempts
+    attempts = 0
 
 # Loop for user guesses
+    while attempts < max_attempts:  # Loop until the user has used up all attempts
+        guess = get_valid_integer(
+            # Get the user's guess and display the current attempt number and total attempts
+            f"Attempt {attempts + 1}/{max_attempts}: Enter your guess: ")
+        attempts += 1
 
 # Check if guess is too low or too high
 
