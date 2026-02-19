@@ -12,7 +12,21 @@ continues until the user either guesses the number correctly or
 exhausts all attempts. After each round, the user is asked if they want to
  play again.
 
+ bluepint of everything i made like functions , variables, like a time line of steps i took to make this game
+1. Imported the random module to generate a random number.
+2. Created a function `get_valid_integer(prompt)` to get a valid integer input from the user with error handling using a while loop and try/except block.
+3. Created a function `get_yes_no(prompt)` to get a valid 'y' or 'n' response from the user with a while loop to ensure valid input.
+4. Created a function `play_game()` to handle the logic of one round of the game
+    a. Asked the user for the lower and upper bounds of the number range, ensuring that the lower bound is less than the upper bound.
+    b. Asked the user for the number of attempts they want, ensuring it is a positive integer.
+    c. Generated a random target number within the specified range.
+    d. Used a while loop to allow the user to make guesses until they either guess correctly or exhaust all attempts, providing feedback on whether their guess is too low, too high, or correct.
+5. Created a `main()` function to serve as the main game loop
+    a. Greeted the user and asked for their name.
+    b. Used a while loop to allow the user to play multiple rounds of the game by calling `play_game()`.
+    c. After each round, asked the user if they want to play again using `get_yes_no()`, and if they choose 'n', exited the loop and ended the game with a thank you message.
 '''
+
 # Import random module to generate a random number
 import random
 
