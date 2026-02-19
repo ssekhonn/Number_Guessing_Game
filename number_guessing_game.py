@@ -19,6 +19,7 @@ import random
 # Function to get a valid integer input with error handling
 
 
+# prompt means the message that will be displayed to the user when asking for input
 def get_valid_integer(prompt):
     while True:  # Loop until a valid integer is entered
         try:  # Try to convert the input to an integer
