@@ -113,5 +113,6 @@ def main():
 
 
 # Run the game
-if __name__ == "__main__":
+if __name__ == "__main__":  # run the main function if this script is executed directly
+    # This line checks if the script is being run directly (as the main program) and if so, it calls the main() function to start the game.
     main()
