@@ -62,7 +62,7 @@ def play_game():
 
     # Ask for number range
     while True:  # Loop until a valid number range is entered
-        low_number = get_valid_integer(
+        low_number = get_valid_integer(  # get_valid_integer is called to get the lower bound of the number range from the user, and the prompt message is passed as an argument to the function
             # Get the lower bound of the number range from the user
             "Enter the lower bound of the number range: ")
         high_number = get_valid_integer(
@@ -121,12 +121,13 @@ def main():
         play_game()  # Play one round of the game
 # Ask if they want to play again, only accepting 'y' or 'n'
         play_again = get_yes_no("Do you want to play again? (y/n): ")
-        if play_again == 'n':  # If the user doesn't want to play again, break out of the loop
+        # If the user doesn't want to play again, break out of the loop , the double equals sign (==) is used to compare the value of play_again with the string 'n'. If they are equal, it means the user has chosen not to play again, and the loop will be exited.
+        if play_again == 'n':
             print("Thanks for playing!")
             break
 
 
 # Run the game
-if __name__ == "__main__":  # run the main function if this script is executed directly
+if __name__ == "__main__":  # run the main function if this script is executed directly , the name means the name of the module, and when a Python script is run directly, its name is set to "__main__". This allows us to check if the script is being run directly or imported as a module in another script. If the condition is true, it means the script is being run directly, and we can call the main() function to start the game.
     # This line checks if the script is being run directly (as the main program) and if so, it calls the main() function to start the game.
     main()
